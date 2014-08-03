@@ -28,8 +28,16 @@ void Chal74hc595::setup(int* _ds, int _sh, int _st){
 void Chal74hc595::shift(int* data){
     digitalWrite(_pinStCp, LOW);
     for(int i=_icsPerChannel;i>0;i--){
-        for(int j=0;j<_channels;j++){
-        shiftOut(_pinDs[j], _pinShCp, MSBFIRST, data[j*_icsPerChannel + i-1]);
+        uint8_t bi;
+        for (bi = 0; bi < 8; bi++)  {
+            for(int j=0;j<_channels;j++){
+                digitalWrite(_pinDs[j],
+                             !!(data[j*_icsPerChannel + i-1] & (1 << (7 - bi))));
+                
+            }
+            digitalWrite(_pinShCp, HIGH);
+            digitalWrite(_pinShCp, LOW);
+//        shiftOut(_pinDs[j], _pinShCp, MSBFIRST, data[j*_icsPerChannel + i-1]);
         }
     }
     digitalWrite(_pinStCp, HIGH);
