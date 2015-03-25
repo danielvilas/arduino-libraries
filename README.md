@@ -1,4 +1,4 @@
 arduino-libraries
 =================
 
-Some Arduino Libraries i made for my projects
+Some Arduino Libraries I made for my projects
