@@ -74,10 +74,10 @@ void ChalL293::setSpeed(L293_MODE mode,int en, byte val){
     }
 }
 
-void ChalL293::setSpeedCh2(byte val){
+void ChalL293::setSpeedCh1(byte val){
     setSpeed(_modeCh1,_pinEn1,val);
 }
-void ChalL293::setSpeedCh1(byte val){
+void ChalL293::setSpeedCh2(byte val){
     setSpeed(_modeCh2,_pinEn2,val);
 }
 /*
