@@ -9,13 +9,13 @@
 #ifndef chal_l293_h
 #define chal_l293_h
 
-typedef enum  L293_MODE {
-    l293_free,
-    l293_stop_h,
-    l293_stop_l,
-    l293_forward,
-    l293_backward
-} ;
+typedef enum  tL293_MODE {
+    l293_free=0,
+    l293_stop_h=1,
+    l293_stop_l=2,
+    l293_forward=3,
+    l293_backward=4
+} L293_MODE;
 
 class ChalL293 {
 private:
